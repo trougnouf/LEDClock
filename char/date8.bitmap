@@ -1,0 +1,4 @@
+#define date8_width 3
+#define date8_height 5
+static unsigned char date8_bits[] = {
+   0x07, 0x05, 0x07, 0x05, 0x07 };

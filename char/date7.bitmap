@@ -1,0 +1,4 @@
+#define date7_width 3
+#define date7_height 5
+static unsigned char date7_bits[] = {
+   0x07, 0x04, 0x06, 0x04, 0x04 };

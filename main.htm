@@ -1,0 +1,64 @@
+<h1>LED clock project</h1>
+  <h2>Material</h2>
+  <section>
+    <ul>
+
+      <li>Microcontroller:
+	<a href="http://www.atmel.com/devices/atmega328p.aspx">ATMega328P</a><br />
+	20MHz, built-in RTC (needs oscillator), 4.5-5.5V, 28 PDIP, compatible with Arduino libraries.<br />
+	<a href="http://www.taydaelectronics.com/ic-integrated-circuits/microcontrollers/atmega328p-pu-atmega328-microcontroller-ic.html">$3.50 (taydaelectronics.com)</a>
+      </li><br />
+
+      <li>Oscillators
+	<ul>
+	  <li>20MHz crystal (MC clock): <a href="http://www.taydaelectronics.com/crystals-resonators-oscilliators/20-000-mhz-20-mhz-crystal-hc-49-s-low-profile.html">$0.10 (taydaelectronics)</a></li>
+	  <li>32.768kHz crystal (RTC): <a href="http://www.taydaelectronics.com/32-768-khz-crystal-cylender-3-x-8-mm.html">$0.11 (taydaelectronics)</a></li>
+	</ul>
+      </li><br />
+
+      <li>Capacitors
+	<ul>
+	  <li>1µF to remove AC from DC source: <a href="http://www.taydaelectronics.com/capacitors/10-x-0-1uf-50v-ceramic-disc-capacitor-pkg-of-37.html">$0.01 * a handful (taydaelectronics)</a></li>
+	  <li>22pF *2 around 32.768kHz crystal (12.5 * 10^-12 = c^2 / (2c) + 1.3 * 10^-12 -> C = 2.24 E -11 = 22.4pF): <a href="http://www.taydaelectronics.com/test-group-2.html">$0.01*2 (taydaelectronics)</a></li>
+	  <li>27pF *2 around 20MHz crystal (18.5E-12 = c^2 / (2c) + 5E-12 -> C = 27pF): <a href="http://www.taydaelectronics.com/test-group-2.html">$0.01*2 (taydaelectronics)</a></li>
+	</ul>
+      </li><br />
+
+      <li>LEDs:<br />
+      time: 8x10 px per num -> 16x30 pixels (RGB)<br />
+      date: 8x10x2 (white)<br />
+      8x10x6 = 640 leds => 160 red (hours)<a href="http://www.taydaelectronics.com/led-5mm-red-water-clear-ultra-bright.html">@$0.02</a>, 160 green (minutes)<a href="http://www.taydaelectronics.com/led-5mm-green-water-clear-super-bright.html">@$0.03</a>, 160 blue (seconds)<a href="http://www.taydaelectronics.com/led-5mm-blue-water-clear-ultra-bright.html">@$0.05</a>, 160 white (date)<a href="http://www.taydaelectronics.com/led-5mm-white-water-clear-ultra-bright.html">@$0.05</a><br />
+      day#(panel7): 6x10, weekday(panel8): 10x10
+      </li><br />
+
+      <li>Shift registers
+	<ul>
+	<li>2+5 (probably 74HC595.) may be able to use unlatching ones on one side, investigate.</li>
+	<li></li>
+	</ul>
+      </li><br />
+
+      <li>Resistors
+	<ul>
+	<li>
+	  LEDs: i=.020A, Vr=2.2V, {Vg,Vb,Vw}=3.4V, Vs=5V<br />
+	  V=iR; R=V/i; Rr=(5-2.2)/.020=140ohms (*8) (get 150ohms), {Rg, Rb, Rw}=(5-3.4)/.020=80ohms (*24) (get 82ohms)
+	</li>
+	<li>Transistors: 10K * 48</li>
+	</ul>
+      </li>
+      </li><br />
+
+      <li>Wiring
+      </li>
+
+      <li>Stripboards: <a href="http://www.taydaelectronics.com/hardware/prototyping-boards/big-stripboard-110x93mm-copper.html">$1.29*6</a>,?
+      </li>
+
+      <li>Transistors: SR*8=6*8=48</li>
+
+      <br />
+    </ul>
+
+
+  </section>

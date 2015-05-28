@@ -1,0 +1,7 @@
+    <p>
+    2014-12-22<br />
+    I created the characters using <a href="http://mtpaint.sourceforge.net/">mtPaint</a>. The 6 numbers used for the time are each 8x10 pixels, the weekday (or clock symbol) is 10x10 and each of the four date (or alarm time) numbers take up 3x5, for a total resolution of 16x40 (=640 pixels.) This fits exactly in 2+5 shift registers<br />
+    Using gimp I was able to export these images as .bitmap, which can be opened with a text editor and consist of an array of bytes in hexadecimals (e.g.: <code>static unsigned char 0_bits[] = {
+   0x7e, 0xff, 0xff, 0xe7, 0xc3, 0xc3, 0xe7, 0xff, 0xff, 0x7e };</code>.)
+   Unfortunately these hex numbers were saved in reverse order (least significant bit first), this would make combining the weekdays and date more difficult for the microcontroller. I ended up converting the big digits with a C program (available in resource) and the rest by hand.
+    </p>
